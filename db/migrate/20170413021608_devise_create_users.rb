@@ -38,11 +38,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       ##Physical Attributes
       t.string   :gender
       t.string   :height
-      t.integer  :weight
+      t.integer  :starting_weight
       t.float    :body_fat
       t.string   :activity_level
 
       ##Goals
+      t.string   :program_weight, :array => true
+      t.string   :program_bf, :array => true
       t.string   :program_type
       t.integer  :goal_weight
       t.float    :goal_body_fat
