@@ -1,5 +1,5 @@
 class Exercise < ApplicationRecord
-  validate :name, :presence => true
-  validate :description, :presence => true
-  validate :muscles_worked, :presence => true
+  validates :name, :presence => true
+  validates :description, :presence => true
+  validates :muscles_worked, :presence => true
 end

@@ -1,5 +1,5 @@
 class LiftSet < ApplicationRecord
   belongs_to :workout
-  validate :reps, :presence => true
-  validate :exercise, :presence => true
+  validates :reps, :presence => true
+  validates :exercise, :presence => true
 end
