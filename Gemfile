@@ -19,6 +19,8 @@ gem 'jbuilder'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'config'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootswatch-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
