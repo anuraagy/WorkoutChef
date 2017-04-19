@@ -18,6 +18,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'config'
 
 group :development, :test do
   gem 'byebug', platform: :mri
