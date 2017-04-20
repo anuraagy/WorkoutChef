@@ -1,5 +1,6 @@
 .container.main
-  %button#trigger.btn.btn-primary.btn-lg{"data-target" => "#modal", "data-toggle" => "modal"}
+  - unless current_user.entered_info
+    %button#trigger.btn.btn-primary.btn-lg{"data-target" => "#modal", "data-toggle" => "modal"}
   .row
     .col-md-2
       .panel.panel-primary
