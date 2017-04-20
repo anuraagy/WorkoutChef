@@ -1,5 +1,40 @@
-- if current_user
-  = current_user.name
-  = current_user.email
-- else
-  = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
+.container.main
+  %button#trigger.btn.btn-primary.btn-lg{"data-target" => "#modal", "data-toggle" => "modal"}
+  .row
+    .col-md-2
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Day
+        .panel-body
+          Panel Content
+    .col-md-5
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Nutrient Goals
+        .panel-body
+          Panel Content
+    .col-md-5
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Progress
+        .panel-body
+          Panel Content
+  .row
+    .col-md-4
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Next Meal
+        .panel-body
+          Panel Content
+    .col-md-4
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Today's Workout
+        .panel-body
+          Panel Content
+    .col-md-4
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title Grocery List
+        .panel-body
+          Panel Content

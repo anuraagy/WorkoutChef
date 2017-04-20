@@ -9,12 +9,61 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require sweetalert
  */
  @import "bootstrap-sprockets";
- @import "bootswatch/cerulean/variables";
+ @import "font-awesome";
+ @import "bootswatch/readable/variables";
  @import "bootstrap";
+ @import "bootswatch/readable/bootswatch";
 
- body { padding-top: 60px; }
+body {
+  background-color: #fafafa;
+}
 
- @import "bootswatch/cerulean/bootswatch";
+.navbar {
+  margin-bottom: 0px;
+}
+
+.jumbotron {
+  text-align: center;
+  padding-top: 150px;
+  height: 600px;
+  padding-bottom: 100px;
+}
+
+.jumbobuttons {
+  margin-top: 50px;
+}
+
+.panel-primary {
+  height: 250px;
+}
+
+.main {
+  margin-top:50px;
+}
+
+.modal-content {
+  border-radius: 0px;
+  padding: 25px;
+}
+
+.mcustom {
+  border: none;
+}
+
+.btn-square {
+  height:150px;
+  width: 150px;
+  border-radius: 0px;
+  margin-bottom: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+#trigger {
+  display:none;
+}

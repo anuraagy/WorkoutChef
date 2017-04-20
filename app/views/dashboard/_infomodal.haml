@@ -1,0 +1,95 @@
+.modal.fade#modal
+  .modal-dialog.modal-lg
+    .modal-content
+      = form_tag update_info_path, :method => "POST", :class => "form-horizontal", :id => "info-form" do
+        .modal-header.mcustom
+          %button.close#close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+          %h1.modal-title#modal-title Fitness Information
+        .modal-body
+          .row
+            .col-md-3
+              .row
+                %button.btn.btn-primary.btn-square#info_button
+                  %i.fa.fa-user.fa-4x
+                  %br
+                  %br
+                  Information
+              .row
+                %button.btn.btn-default.btn-square#goals_button
+                  %i.fa.fa-check-square-o.fa-4x
+                  %br
+                  %br
+                  Goals
+            .col-md-9
+              %fieldset
+                #information
+                  .form-group{:style => "inline-block"}
+                    .col-md-3
+                      = label_tag :bio, 'Bio', :class => "control-label"
+                    .col-md-9
+                      = text_area_tag :bio , "", :class => "form-control", :id => "bio"
+                  .form-group
+                    .col-md-3
+                      = label_tag :dob, 'Birthday', :class => "control-label"
+                    .col-md-9
+                      = date_field_tag :dob , '04/19/2017', :min => Date.new(1900, 01, 01), :max => Date.today,  :class => "form-control", :id => "dob", :required => true
+                  .form-group
+                    .col-md-3
+                      = label_tag :height, 'Height', :class => "control-label"
+                    .col-md-9
+                      .input-group
+                        = number_field_tag :feet , "", :class => "form-control", :max => 7, :min => 2, :id => "feet", :required => true
+                        %span.input-group-addon feet
+                        = number_field_tag :inches , "", :class => "form-control", :max => 11, :min => 0, :id => "inches", :required => true
+                        %span.input-group-addon inches
+                  .form-group
+                    .col-md-3
+                      = label_tag :weight, 'Weight', :class => "control-label"
+                    .col-md-9
+                      .input-group
+                        = number_field_tag :weight , "", :class => "form-control", :max => 400, :min => 50, :id => "weight", :required => true
+                        %span.input-group-addon lbs
+                  .form-group
+                    .col-md-3
+                      = label_tag :bf, 'Body fat', :bf => "control-label"
+                    .col-md-9
+                      .input-group
+                        = number_field_tag :bf , "", :class => "form-control", :max => 50, :min => 0, :id => "bf"
+                        %span.input-group-addon %
+                  .form-group
+                    .col-md-3
+                      = label_tag :activity_level, 'Activity Level', :class => "control-label"
+                    .col-md-9
+                      = select_tag :activity_level, raw("<option>Not Active</option><option>Somewhat Active</option><option>Moderately Active</option><option>Mostly Active</option><option>Extremely Active</option>"), :class => "form-control", :id => "activity_level", :required => true
+                #goals
+                  .form-group
+                    .col-md-3
+                      = label_tag :program_type, "Program Type", :class => "control-label"
+                    .col-md-9
+                      = select_tag :program_type, raw("<option>Bulking</option><option>Cutting</option><option>Maintaining</option>"), :class => "form-control", :id => "program_type", :required => true
+                  .form-group
+                    .col-md-3
+                      = label_tag :goal_weight, 'Goal weight', :class => "control-label"
+                    .col-md-9
+                      .input-group
+                        = number_field_tag :goal_weight , "", :class => "form-control", :max => 400, :min => 50, :id => "goal_weight", :required => true
+                        %span.input-group-addon lbs
+                  .form-group
+                    .col-md-3
+                      = label_tag :goal_bf, 'Goal Body fat', :bf => "control-label"
+                    .col-md-9
+                      .input-group
+                        = number_field_tag :goal_bf , "", :class => "form-control", :max => 50, :min => 0, :id => "goal_bf", :required => true
+                        %span.input-group-addon %
+                  .form-group
+                    .col-md-3
+                      = label_tag :program_length, 'Program Length', :bf => "control-label"
+                    .col-md-9
+                      .input-group
+                        = number_field_tag :program_length , "", :class => "form-control", :max => 50, :min => 0, :id => "program_length", :required => true
+                        %span.input-group-addon day
+        .modal-footer.mcustom
+          %button.btn.btn-default#cancel{"data-dismiss" => "modal", :type => "button"} Cancel
+          %button.btn.btn-primary#next{:type => "button"} Next
+          %button.btn.btn-primary#back{:type => "button"} Back
+          = submit_tag "Submit", :class => "btn btn-primary", :id =>  "submit"
