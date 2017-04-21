@@ -72,6 +72,7 @@ GEM
     execjs (2.7.0)
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
+    fatsecret-api (0.2.1)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
@@ -223,6 +224,7 @@ DEPENDENCIES
   coffee-rails
   config
   devise
+  fatsecret-api
   font-awesome-rails
   haml
   haml-rails

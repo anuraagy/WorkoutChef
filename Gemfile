@@ -23,6 +23,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootswatch-rails'
 gem "font-awesome-rails"
 gem 'sweet-alert'
+gem 'fatsecret-api'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
