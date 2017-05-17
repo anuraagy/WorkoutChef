@@ -31,19 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.integer  :starting_weight
       t.float    :body_fat
       t.string   :activity_level
-
-      ##Goals
-      t.string   :program_weight, :array => true
-      t.string   :program_bf, :array => true
-      t.string   :program_type
-      t.integer  :goal_weight
-      t.float    :goal_body_fat
-      t.integer  :program_length
-      t.string   :goals,  :array => true
-
-
-
-
+    
       t.timestamps null: false
     end
 

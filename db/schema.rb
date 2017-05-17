@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20170419161439) do
   enable_extension "plpgsql"
 
   create_table "exercise_logs", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "program_id"
     t.datetime "date",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_exercise_logs_on_user_id", using: :btree
+    t.index ["program_id"], name: "index_exercise_logs_on_program_id", using: :btree
   end
 
   create_table "exercises", force: :cascade do |t|
@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 20170419161439) do
   end
 
   create_table "food_logs", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "program_id"
     t.datetime "date",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_food_logs_on_user_id", using: :btree
+    t.index ["program_id"], name: "index_food_logs_on_program_id", using: :btree
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -77,6 +77,21 @@ ActiveRecord::Schema.define(version: 20170419161439) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["food_log_id"], name: "index_meals_on_food_log_id", using: :btree
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string   "current_weight",               array: true
+    t.string   "current_bodyfat",              array: true
+    t.string   "program_type",    null: false
+    t.integer  "goal_weight",     null: false
+    t.string   "goals",                        array: true
+    t.float    "goal_body_fat"
+    t.integer  "user_id"
+    t.datetime "start_date",      null: false
+    t.datetime "end_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_programs_on_user_id", using: :btree
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -124,13 +139,6 @@ ActiveRecord::Schema.define(version: 20170419161439) do
     t.integer  "starting_weight"
     t.float    "body_fat"
     t.string   "activity_level"
-    t.string   "program_weight",                                   array: true
-    t.string   "program_bf",                                       array: true
-    t.string   "program_type"
-    t.integer  "goal_weight"
-    t.float    "goal_body_fat"
-    t.integer  "program_length"
-    t.string   "goals",                                            array: true
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "provider"
