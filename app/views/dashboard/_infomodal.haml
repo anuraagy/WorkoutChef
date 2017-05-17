@@ -82,10 +82,10 @@
                         = number_field_tag :goal_bf , "", :class => "form-control", :max => 50, :min => 0, :id => "goal_bf", :required => true
                         %span.input-group-addon %
                   .form-group
+                    .col-md-3
+                      = label_tag :food_options, "Food Options", :class => "control-label"
                     .col-md-9
-                      .input-group
-                        = number_field_tag :program_length , "", :class => "form-control", :max => 50, :min => 0, :id => "program_length", :required => true
-                        %span.input-group-addon day
+                      = select_tag :food_options, raw("<option>American</option><option>Italian</option><option>Chinese</option><option>Indian</option><option>Mexican</option><option>Gluten Free</option><option>Low Cholesterol</option><option>Lactose Intolerant</option>"), :multiple => "multiple", :class => "form-control", :id => "food_options", :required => true
         .modal-footer.mcustom
           %button.btn.btn-default#cancel{"data-dismiss" => "modal", :type => "button"} Cancel
           %button.btn.btn-primary#next{:type => "button"} Next

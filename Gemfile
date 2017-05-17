@@ -24,6 +24,7 @@ gem 'bootswatch-rails'
 gem "font-awesome-rails"
 gem 'sweet-alert'
 gem 'fatsecret-api'
+gem "select2-rails"
 
 
 group :development, :test do

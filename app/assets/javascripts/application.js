@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require sweetalert.min
 //= require dashboard
+//= require select2
