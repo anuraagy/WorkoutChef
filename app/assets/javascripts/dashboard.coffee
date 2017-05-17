@@ -12,6 +12,8 @@ class Dashboard
     @activity_level_input  = @element.find("#activity_level")
     @information           = @element.find("#information")
     @goals                 = @element.find("#goals")
+    @program_type_input    = @element.find("#program_type")
+    @food_options_input    = @element.find("#food_options")
 
     @cancel_button         = @element.find("#cancel")
     @hidden_button         = @element.find("#trigger")
@@ -21,6 +23,10 @@ class Dashboard
     @info_button           = @element.find("#info_button")
     @goals_button          = @element.find("#goals_button")
     @close_button          = @element.find("#close")
+
+    @activity_level_input.select2  theme: 'bootstrap'
+    @program_type_input.select2    theme: 'bootstrap'
+    @food_options_input.select2    theme: 'bootstrap'
 
     @next_button.on    "click", @nextSlide
     @back_button.on    "click", @previouSlide
